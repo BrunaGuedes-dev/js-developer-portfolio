@@ -27,6 +27,7 @@
 .header .title {
     font-family: 'Neue Machina';
     text-align: center;
+    max-width: 50rem;
 }
 
 .information {
@@ -56,18 +57,27 @@
 
 .information .job::before {
     background-image: url('../img/icons/job.svg');
+    filter: invert(1%) sepia(50%) saturate(2500%) hue-rotate(320deg) brightness(190%);
 }
 
 .information .location::before {
     background-image: url('../img/icons/location.svg');
+    filter: invert(1%) sepia(50%) saturate(2500%) hue-rotate(320deg) brightness(190%);
 }
 
 .information .email::before {
     background-image: url('../img/icons/email.svg');
+    filter: invert(1%) sepia(50%) saturate(2500%) hue-rotate(320deg) brightness(190%);
 }
 
-.information .phone::before {
-    background-image: url('../img/icons/phone.svg');
+.information .linkedIn::before {
+    background-image: url('../img/icons/Linkedin.svg');
+    filter: invert(30%) sepia(50%) saturate(2500%) hue-rotate(225deg) brightness(150%);
+}
+
+.information .GitHub::before {
+    background-image: url('../img/icons/github.svg');
+    filter: invert(70%) sepia(50%) saturate(2500%) hue-rotate(225deg) brightness(150%);
 }
 
 @media only screen and (min-width: 768px) {
@@ -87,7 +97,7 @@
     .header .title {
         grid-area: title;
         text-align: start;
-        max-width: 210px;
+        
     }
 
     .header .information {

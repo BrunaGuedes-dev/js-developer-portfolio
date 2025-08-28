@@ -13,9 +13,14 @@ function updateProfileInfo(profileData) {
     const location = document.getElementById('profile.location')
     location.innerText = profileData.location
 
-    const phone = document.getElementById('profile.phone')
-    phone.innerText = profileData.phone
-    phone.href = `tel:${profileData.phone}`
+    const linkedIn = document.getElementById('profile.linkedIn')
+    linkedIn.innerText = profileData.linkedIn
+    linkedIn.href = `${profileData.linkedIn}`
+
+    const gitHub = document.getElementById('profile.GitHub')
+    gitHub.innerText = profileData.gitHub
+    gitHub.href = `${profileData.gitHub}`
+
 
     const email = document.getElementById('profile.email')
     email.innerText = profileData.email
@@ -43,7 +48,22 @@ function updatePortfolio(profileData) {
         return `
             <li>
                 <h3 ${project.github ? 'class="github"' : ''}>${project.name}</h3>
-                <a href="${project.url}" target="_blank">${project.url}</a>
+                <a href="${project.url}" target="_blank">Projeto: ${project.url}</a>
+                <a href="${project.implantação}" target="_blank">Implantação: ${project.implantação}</a>
+
+            </li>
+        `
+    }).join('')
+}
+
+function updateEducation(profileData) {
+    const educations = document.getElementById('profile.education')
+    educations.innerHTML = profileData.educations.map(education => {
+        return `
+            <li>
+                <h3 class="title">${education.name}</h3>
+                <p class="period">${education.period}</p>
+                <p>${education.description}</p>
             </li>
         `
     }).join('')
@@ -69,5 +89,6 @@ function updateProfessionalExperience(profileData) {
     updateHardSkills(profileData)
     updateLanguages(profileData)
     updatePortfolio(profileData)
+    updateEducation(profileData)
     updateProfessionalExperience(profileData)
 })()
